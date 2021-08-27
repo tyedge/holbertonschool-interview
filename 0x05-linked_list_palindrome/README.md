@@ -1,0 +1,1 @@
+This folder contains the linked list palindrome project files.
