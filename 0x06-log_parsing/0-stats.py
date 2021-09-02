@@ -21,14 +21,13 @@ def sort_n_print(size, dic):
 try:
     for num, line in enumerate(sys.stdin, start=1):
         parsed = line.split()
-        if len(parsed) == 9:
-            total += eval(parsed[8])
-            if parsed[7] in code_dic:
-                code_dic[parsed[7]] += 1
+        if len(parsed) > 2:
+            total += eval(parsed[-1])
+            if parsed[-2] in code_dic:
+                code_dic[parsed[-2]] += 1
             if num % 10 == 0:
                 sort_n_print(total, code_dic)
     sort_n_print(total, code_dic)
-    
 except KeyboardInterrupt:
     sort_n_print(total, code_dic)
     raise
