@@ -27,23 +27,5 @@ try:
                 code_dic[parsed[7]] += 1
             if num % 10 == 0:
                 sort_n_print(total, code_dic)
-                """
-                print('File size: {}'.format(total))
-                scd = sorted(code_dic.items())
-                for k, v in scd:
-                    if v > 0:
-                        print('{}: {}'.format(k, v))
-                """
-except KeyboardInterrupt:
-    sort_n_print(total, code_dic)
-    """
-    print('File size: {}'.format(total))
-    scd = sorted(code_dic.items())
-    for k, v in scd:
-        if v > 0:
-            print('{}: {}'.format(k, v))
-    """
-    raise
-
 finally:
     sort_n_print(total, code_dic)
