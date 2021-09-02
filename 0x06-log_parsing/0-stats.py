@@ -10,6 +10,7 @@ code_dic = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0,
 
 
 def sort_n_print(size, dic):
+    """This function sorts the dictionary and prints total size and codes"""
     print("File size: {}".format(size))
     ascend = sorted(dic.items())
     for key, value in ascend:
