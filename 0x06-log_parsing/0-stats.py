@@ -8,6 +8,15 @@ total = 0
 code_dic = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0,
             "405": 0, "500": 0}
 
+
+def sort_n_print(size, dic):
+    print("File size: {}".format(size))
+    ascend = sorted(dic.items())
+    for key, value in ascend:
+        if value > 0:
+            print("{}: {}".format(key, value))
+
+
 try:
     for num, line in enumerate(sys.stdin, start=1):
         parsed = line.split()
@@ -16,15 +25,24 @@ try:
             if parsed[7] in code_dic:
                 code_dic[parsed[7]] += 1
             if num % 10 == 0:
+                sort_n_print(total, code_dic)
+                """
                 print('File size: {}'.format(total))
                 scd = sorted(code_dic.items())
                 for k, v in scd:
                     if v > 0:
                         print('{}: {}'.format(k, v))
+                """
 except KeyboardInterrupt:
+    sort_n_print(total, code_dic)
+    """
     print('File size: {}'.format(total))
     scd = sorted(code_dic.items())
     for k, v in scd:
         if v > 0:
             print('{}: {}'.format(k, v))
+    """
     raise
+
+finally:
+    sort_n_print(total, code_dic)
