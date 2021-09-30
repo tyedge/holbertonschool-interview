@@ -1,0 +1,1 @@
+This repository contains the 2048 (single line) interview question project files.
