@@ -23,11 +23,11 @@ void menger(int level)
 			for (k =  pow(3, level) / 3; k; k /= 3)
 			{
 				if ((i % 3 == 1) && (j % 3 == 1))
-				  break;
+					break;
 				if ((i % (k * 3)) / k == 1 && (
 					    j % (k * 3)) / k == 1)
 					break;
-		        }
+			}
 			if (!k)
 			{
 				printf("#");
