@@ -19,6 +19,7 @@ if (int(sys.argv[1])) < 4:
 N = int(sys.argv[1])
 onboard = []
 
+
 def nsolver(n):
     """This function finds and prints solutions to the N queens problem"""
     for i in range(N):
@@ -27,7 +28,8 @@ def nsolver(n):
             nsolver(n + 1)
             onboard.pop()
         else:
-            chk = [i == j[1] or abs(n - j[0]) == abs(i - j[1]) for j in onboard]
+            chk = [i == j[1] or abs(n - j[0]) == abs(
+                i - j[1]) for j in onboard]
             if not any(chk):
                 onboard.append([n, i])
                 if n == N - 1:
@@ -35,5 +37,6 @@ def nsolver(n):
                 else:
                     nsolver(n + 1)
                 onboard.pop()
+
 
 nsolver(0)
