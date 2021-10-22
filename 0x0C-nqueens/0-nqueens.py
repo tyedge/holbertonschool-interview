@@ -5,7 +5,7 @@ a given value of N"""
 import sys
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         exit(1)
@@ -15,7 +15,7 @@ if __name__ == '__main__':
             exit(1)
         if (int(sys.argv[1])) < 4:
             print("N must be at least 4")
-            exit(0)
+            exit(1)
 
     N = int(sys.argv[1])
     onboard = []
@@ -28,7 +28,8 @@ if __name__ == '__main__':
                 nsolver(n + 1)
                 onboard.pop()
             else:
-                chk = [i == j[1] or abs(n - j[0]) == abs(i - j[1]) for j in onboard]
+                chk = [i == j[1] or abs(n - j[0]) == abs(
+                    i - j[1]) for j in onboard]
                 if not any(chk):
                     onboard.append([n, i])
                     if n == N - 1:
