@@ -43,14 +43,14 @@ avl_t *builder(int *arr, int start, int end, avl_t **aroot)
 
 	mid = (end + start) / 2;
 
-	builder(array, start, mid - 1, &left);
-	builder(array, mid + 1, end, &right);
+	builder(arr, start, mid - 1, &left);
+	builder(arr, mid + 1, end, &right);
 
 	newnode = malloc(sizeof(avl_t));
 	if (newnode == NULL)
 		return (NULL);
 
-	newnode->n = array[mid];
+	newnode->n = arr[mid];
 	newnode->parent = NULL;
 	newnode->left = left;
 	newnode->right = right;
